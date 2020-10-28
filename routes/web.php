@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PluginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,9 @@ Route::get('/', function () {
 Route::get('/info', function() {
     return "<h1>Bienvenido extraño, Este es el core del microkernel poderoso....!!!</h1>";
 });
+
+Route::get('/plugins', function() {
+    return view('plugins');
+});
+
+Route::post('/plugins', [PluginController::class, 'save']);
