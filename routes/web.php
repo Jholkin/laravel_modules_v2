@@ -27,3 +27,7 @@ Route::get('/plugins', function() {
 });
 
 Route::post('/plugins', [PluginController::class, 'save']);
+
+Route::get('/modules', [PluginController::class, 'modules'])->name('modules');
+
+Route::post('/modules', [PluginController::class, 'delete']);
