@@ -28,6 +28,6 @@ Route::get('/plugins', function() {
 
 Route::post('/plugins', [PluginController::class, 'save']);
 
-Route::get('/modules', [PluginController::class, 'modules'])->name('modules');
+Route::get('/modules', [PluginController::class, 'modules']);
 
-Route::post('/modules', [PluginController::class, 'delete']);
+Route::post('/modules/{module}', [PluginController::class, 'delete'])->name("delete");
